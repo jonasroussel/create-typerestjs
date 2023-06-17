@@ -1,8 +1,8 @@
-import axios from 'axios'
 import spawn from 'cross-spawn'
 import { existsSync, readdirSync } from 'fs'
 import fs from 'fs/promises'
 import { blue, green, red, reset, yellow } from 'kolorist'
+import fetch from 'node-fetch'
 import path from 'path'
 import prompts from 'prompts'
 
@@ -45,7 +45,11 @@ async function main() {
 
 		const getProjectName = () => (targetDir === '.' ? path.basename(path.resolve()) : targetDir)
 
-		const { packageName, overwrite, packageManager } = await prompts(
+		const {
+			packageName = getProjectName(),
+			overwrite,
+			packageManager,
+		} = await prompts(
 			[
 				{
 					type: 'text',
@@ -115,8 +119,16 @@ async function main() {
 
 		let version: string
 		try {
-			const res = await axios.get('https://registry.npmjs.org/typerestjs', { timeout: 3_000 })
-			version = res.data['dist-tags'].latest
+			const controller = new AbortController()
+			const id = setTimeout(() => controller.abort(), 3_000)
+
+			const data = await fetch('https://registry.npmjs.org/typerestjs', {
+				signal: controller.signal,
+			}).then<any>((res) => res.json())
+
+			clearTimeout(id)
+
+			version = data['dist-tags'].latest
 		} catch (ex) {
 			version = DEFAULT_VERSION
 		}
