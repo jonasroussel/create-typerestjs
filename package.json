@@ -1,0 +1,40 @@
+{
+	"name": "create-typerestjs",
+	"version": "1.0.0",
+	"license": "MIT",
+	"main": "index.js",
+	"author": "Jonas Roussel <go.jroussel@gmail.com>",
+	"bin": {
+		"create-typerestjs": "index.js"
+	},
+	"files": [
+		"template",
+		"index.js"
+	],
+	"scripts": {
+		"try": "npm run build && node index.js",
+		"build": "esbuild --bundle --minify --platform=node ./src/index.ts --outfile=index.js",
+		"prepublishOnly": "npm run build"
+	},
+	"engines": {
+		"node": ">=16.7.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/jonasroussel/create-typerestjs.git"
+	},
+	"bugs": {
+		"url": "https://github.com/jonasroussel/create-typerestjs/issues"
+	},
+	"homepage": "https://github.com/jonasroussel/create-typerestjs#readme",
+	"devDependencies": {
+		"@types/cross-spawn": "^6.0.2",
+		"@types/prompts": "^2.4.4",
+		"axios": "^1.4.0",
+		"cross-spawn": "^7.0.3",
+		"esbuild": "^0.18.4",
+		"kolorist": "^1.8.0",
+		"prompts": "^2.4.2",
+		"typescript": "^5.1.3"
+	}
+}
