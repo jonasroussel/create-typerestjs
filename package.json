@@ -1,6 +1,6 @@
 {
 	"name": "create-typerestjs",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"license": "MIT",
 	"main": "index.js",
 	"author": "Jonas Roussel <go.jroussel@gmail.com>",
@@ -9,11 +9,12 @@
 	},
 	"files": [
 		"template",
-		"index.js"
+		"index.js",
+		"build.js"
 	],
 	"scripts": {
-		"try": "npm run build && node index.js",
-		"build": "esbuild --bundle --minify --platform=node ./src/index.ts --outfile=index.js",
+		"try": "npm run build && ./index.js",
+		"build": "esbuild --bundle --minify --platform=node ./src/index.ts --outfile=build.js",
 		"prepublishOnly": "npm run build"
 	},
 	"engines": {
