@@ -3,7 +3,7 @@
 ## Scaffolding Your First TyperestJS Project
 
 > **Compatibility Note:**
-> Typerestjs requires [Node.js](https://nodejs.org/en/) version 16.7+. Please upgrade if your package manager warns about it.
+> Typerestjs requires [Node.js](https://nodejs.org/en/) version 18+. Please upgrade if your package manager warns about it.
 
 With NPM:
 

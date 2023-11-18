@@ -1,34 +1,25 @@
 {
 	"include": ["src"],
 	"compilerOptions": {
-		// Module
-		"module": "CommonJS",
-		"moduleResolution": "Node",
+		// Base options
 		"esModuleInterop": true,
+		"allowJs": true,
+		"resolveJsonModule": true,
+		"moduleDetection": "force",
 
-		// Output
-		"baseUrl": ".",
-		"outDir": "./dist",
-		"paths": {
-			"@controllers/*": ["src/controllers/*"],
-			"@middlewares/*": ["src/middlewares/*"],
-			"@models/*": ["src/models/*"],
-			"@plugins/*": ["src/plugins/*"],
-			"@routes/*": ["src/routes/*"],
-			"@schemas/*": ["src/schemas/*"],
-			"@services/*": ["src/services/*"],
-			"@tools/*": ["src/tools/*"]
-		},
-		"target": "ES6",
-		"declaration": false,
-		"sourceMap": true,
-
-		// Lint
-		"strict": true,
-		"noFallthroughCasesInSwitch": true,
-		"forceConsistentCasingInFileNames": true,
+		// Node options
+		"lib": ["ES2022"],
+		"target": "ES2022",
+		"module": "NodeNext",
+		"moduleResolution": "NodeNext",
 
 		// Optimization
-		"skipLibCheck": true
+		"skipLibCheck": true,
+
+		// Strictness
+		"strict": true,
+		"noImplicitReturns": false,
+		"noFallthroughCasesInSwitch": true,
+		"forceConsistentCasingInFileNames": true
 	}
 }
