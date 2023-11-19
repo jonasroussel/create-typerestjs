@@ -8,7 +8,7 @@
 	},
 	"scripts": {
 		"dev": "tsup --watch --onSuccess='node --enable-source-maps .'",
-		"build": "tsup",
+		"build": "tsup --minify",
 		"start": "node --enable-source-maps ."
 	},
 	"dependencies": {

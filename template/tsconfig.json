@@ -13,6 +13,10 @@
 		"module": "NodeNext",
 		"moduleResolution": "NodeNext",
 
+		// JSX options
+		"jsx": "react",
+		"jsxFactory": "JSX.el",
+
 		// Optimization
 		"skipLibCheck": true,
 
