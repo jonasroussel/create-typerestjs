@@ -1,6 +1,6 @@
 {
 	"name": "create-typerestjs",
-	"version": "1.1.0",
+	"version": "1.2.0",
 	"license": "MIT",
 	"main": "index.js",
 	"author": "Jonas Roussel <go.jroussel@gmail.com>",
